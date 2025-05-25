@@ -1,0 +1,3 @@
+interface IceCream {
+    String serve();
+}
