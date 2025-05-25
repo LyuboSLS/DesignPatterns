@@ -19,7 +19,7 @@ public class ShopSingleton {
             case NO_TOPPING -> iceCream;
             case CHOCOLATE_COATING -> new ChocolateCoatingDecorator(iceCream);
             case CHOCOLATE_CHIPS -> new ChocolateChipsDecorator(iceCream);
-            default -> throw new IllegalStateException("Не предлагаме добавка " + topping);
+
         };
     }
 }

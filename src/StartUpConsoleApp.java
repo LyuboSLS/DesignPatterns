@@ -66,16 +66,12 @@ public class StartUpConsoleApp {
         System.out.print("Ваш избор: ");
 
         int toppingChoice = scanner.nextInt();
-        switch (toppingChoice) {
-            case 0:
-                return IceCreamToppingsEnum.NO_TOPPING;
-            case 1:
-                return IceCreamToppingsEnum.CHOCOLATE_COATING;
-            case 2:
-                return IceCreamToppingsEnum.CHOCOLATE_CHIPS;
-            default:
-                throw new IllegalArgumentException("Не предлагаме такава добавка");
-        }
+        return switch (toppingChoice) {
+            case 0 -> IceCreamToppingsEnum.NO_TOPPING;
+            case 1 -> IceCreamToppingsEnum.CHOCOLATE_COATING;
+            case 2 -> IceCreamToppingsEnum.CHOCOLATE_CHIPS;
+            default -> throw new IllegalArgumentException("Не предлагаме такава добавка");
+        };
     }
 
     private static IceCreamFlavorsEnum chooseFlavor() {
@@ -85,20 +81,11 @@ public class StartUpConsoleApp {
         System.out.print("Ваш избор: ");
 
         int choice = scanner.nextInt();
-        IceCreamFlavorsEnum flavor;
-        switch (choice) {
-            case 1:
-                flavor = IceCreamFlavorsEnum.VANILLA;
-                break;
-            case 2:
-                flavor = IceCreamFlavorsEnum.CHOCOLATE;
-                break;
-            case 3:
-                flavor = IceCreamFlavorsEnum.STRAWBERRY;
-                break;
-            default:
-                throw new IllegalArgumentException("Не предлагаме такъв вкус сладолед");
-        }
-        return flavor;
+        return switch (choice) {
+            case 1 -> IceCreamFlavorsEnum.VANILLA;
+            case 2 -> IceCreamFlavorsEnum.CHOCOLATE;
+            case 3 -> IceCreamFlavorsEnum.STRAWBERRY;
+            default -> throw new IllegalArgumentException("Не предлагаме такъв вкус сладолед");
+        };
     }
 }
