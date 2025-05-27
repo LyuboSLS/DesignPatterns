@@ -16,7 +16,7 @@ public class StartUpConsoleApp {
     }
 
     private static void delivery(IceCream order) {
-        System.out.println("\n🚚 Доставка на: " + order.serve());
+        System.out.println("\n Доставка на: " + order.serve());
         DeliveryTypeEnum deliveryType = chooseDeliveryType();
         String address = enterAddress();
         executeDelivery(order, deliveryType, address);
@@ -30,7 +30,7 @@ public class StartUpConsoleApp {
     }
 
     private static String enterAddress() {
-        System.out.println("\n🚚 Въведете адрес на доставка");
+        System.out.println("\nВъведете адрес на доставка");
         Scanner scanner = new Scanner(System.in);
         String address = scanner.nextLine();
         return address;
